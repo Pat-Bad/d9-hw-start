@@ -1,5 +1,6 @@
 import { Col, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 const Favourites = () => {
   const heartedJobs = useSelector((reduxState) => {
@@ -15,7 +16,10 @@ const Favourites = () => {
       >
         <ul>
           {heartedJobs.map((job, i) => (
-            <li key={i}></li>
+            <li key={i}>
+              {" "}
+              <Link to={`/${job}`}>{job}</Link>
+            </li>
           ))}
         </ul>
       </Col>
