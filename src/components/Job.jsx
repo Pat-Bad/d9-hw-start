@@ -1,15 +1,16 @@
-import { Row, Col } from "react-bootstrap";
-import { Link, useDispatch } from "react-router-dom";
+import { Row, Col, Button } from "react-bootstrap";
+import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 
 const Job = ({ data }) => {
   const dispatch = useDispatch();
-};
 
-const addToFavourites = () => {
-  dispatch({
-    type: "ADD_TO_FAVOURITES",
-    payload: data.company_name,
-  });
+  const addToFavourites = () => {
+    dispatch({
+      type: "ADD_TO_FAVOURITES",
+      payload: data.company_name,
+    });
+  };
 
   return (
     <Row
@@ -21,12 +22,7 @@ const addToFavourites = () => {
         <Button
           className="d-flex align-items-center"
           variant="success"
-          onClick={() => {
-            dispatch({
-              type: "ADD_TO_FAVOURITES",
-              payload: jobSelected,
-            });
-          }}
+          onClick={addToFavourites}
         >
           Add to favourites
         </Button>
