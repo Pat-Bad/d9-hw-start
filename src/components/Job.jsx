@@ -8,6 +8,12 @@ const Job = ({ data }) => (
   >
     <Col xs={3}>
       <Link to={`/${data.company_name}`}>{data.company_name}</Link>
+      <Button className="d-flex align-items-center"
+                onClick={() => {dispatch({
+                  type:'ADD_TO_FAVOURITES';
+                  payload: jobSelected})}}>Add to favourites</Button>
+
+               
     </Col>
     <Col xs={9}>
       <a href={data.url} target="_blank" rel="noreferrer">

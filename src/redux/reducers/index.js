@@ -5,8 +5,19 @@ const initialState = {
 };
 
 const mainReducer = (state = initialState, action) => {
-return {
-    default: return state
-}};
+  switch (action.type) {
+    case "ADD_TO_FAVOURITES":
+      return {
+        ...state,
+        favourites: {
+          ...state.favourites,
+          content: state.favourites.content.concat(action.payload),
+        },
+      };
 
-export default mainReducer
+    default:
+      return state;
+  }
+};
+
+export default mainReducer;
