@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Container, Row, Col, Form, Button } from "react-bootstrap";
+import { Container, Row, Col, Form } from "react-bootstrap";
 import Job from "./Job";
 import { Link } from "react-router-dom";
 
@@ -66,14 +66,7 @@ const MainSearch = () => {
       </Row>
       <Row>
         <Col className="ms-5">
-          <Link to="/favourites">
-            <Button
-              className="d-flex align-items-center w-10 "
-              variant="success"
-            >
-              Go to Favourites
-            </Button>
-          </Link>
+          <Link to="/favourites">Favourites</Link>
         </Col>
       </Row>
     </Container>

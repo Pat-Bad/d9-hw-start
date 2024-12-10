@@ -14,12 +14,16 @@ const Favourites = () => {
         md={6}
       >
         <ul>
-          {heartedJobs.map((job, i) => (
-            <li key={i}>
-              {" "}
-              <Link to={`/${job.company_name}`}>{job.company_name}</Link>
-            </li>
-          ))}
+          {heartedJobs.map(
+            (data, i) => (
+              console.log(heartedJobs),
+              (
+                <li key={i}>
+                  <Link to={`/${data.company_name}`}>{heartedJobs[i]}</Link>
+                </li>
+              )
+            )
+          )}
         </ul>
       </Col>
     </Row>
